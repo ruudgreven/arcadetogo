@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "Install and prepare venv"
 cd ~/arcadetogo-main
 python3 -m venv myvenv
