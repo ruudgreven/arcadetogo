@@ -9,7 +9,7 @@ window = tk.Tk()
 backgroundImage = PhotoImage(file="background.gif")
 player1ControlsImage = PhotoImage(file="buttons-player1.gif")
 
-canvas = tk.Canvas(window, bg='white')
+canvas = tk.Canvas(window, bg='black')
 canvas.pack(fill='both', expand=True)
 
 # draw background
