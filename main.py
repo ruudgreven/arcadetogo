@@ -37,6 +37,6 @@ p1_joystick_right_text = canvas.create_text(224, 170, text="Jump / \nRun", font=
 
 
 # setting attribute
-#window.attributes('-fullscreen', True) #1480x320
+window.attributes('-fullscreen', True) #1480x320
 
 window.mainloop()
