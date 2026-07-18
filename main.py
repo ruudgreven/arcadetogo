@@ -36,10 +36,11 @@ class App(tk.Tk):
         self.r1_button_image = PhotoImage(file="images/controls/r1-button.png")
         self.r1_button_imageoff = PhotoImage(file="images/controls/r1-button-off.png")
 
-        self.a_button_image = PhotoImage(file="images/controls/a-button.png")
-        self.a_button_imageoff = PhotoImage(file="images/controls/a-button-off.png")
         self.b_button_image = PhotoImage(file="images/controls/b-button.png")
         self.b_button_imageoff = PhotoImage(file="images/controls/b-button-off.png")
+        self.a_button_image = PhotoImage(file="images/controls/a-button.png")
+        self.a_button_imageoff = PhotoImage(file="images/controls/a-button-off.png")
+
         self.l2_button_image = PhotoImage(file="images/controls/l2-button.png")
         self.l2_button_imageoff = PhotoImage(file="images/controls/l2-button-off.png")
         self.r2_button_image = PhotoImage(file="images/controls/r2-button.png")
@@ -57,7 +58,7 @@ class App(tk.Tk):
 
         # Draw game image and title
         self.gameImagePlaceholder =  self.canvas.create_image(20,35, image=self.gameImage, anchor='nw')
-        self.gameNamePlaceholder = self.canvas.create_text(865, 22, text="Bruudt's Arcade to Go", font=("Adumu", 42), fill="white", anchor="center", width=700)
+        self.gameNamePlaceholder = self.canvas.create_text(865, 26, text="Bruudt's Arcade to go", font=("Adumu", 38), fill="white", anchor="center", width=1400)
 
         # Draw game buttons
         self.start_button_placeholder = self.canvas.create_image(320, 100, image=self.startp1_imageoff, anchor='nw')
@@ -70,28 +71,28 @@ class App(tk.Tk):
         self.l1_button_placeholder = self.canvas.create_image(850, 100, image=self.l1_button_imageoff, anchor='nw')
         self.r1_button_placeholder = self.canvas.create_image(975, 100, image=self.r1_button_imageoff, anchor='nw')
 
-        self.a_button_placeholder = self.canvas.create_image(600, 184, image=self.a_button_imageoff, anchor='nw')
-        self.b_button_placeholder = self.canvas.create_image(725, 184, image=self.b_button_imageoff, anchor='nw')
+        self.b_button_placeholder = self.canvas.create_image(600, 184, image=self.b_button_imageoff, anchor='nw')
+        self.a_button_placeholder = self.canvas.create_image(725, 184, image=self.a_button_imageoff, anchor='nw')
         self.l2_button_placeholder = self.canvas.create_image(850, 184, image=self.l2_button_imageoff, anchor='nw')
         self.r2_button_placeholder = self.canvas.create_image(975, 184, image=self.r2_button_imageoff, anchor='nw')
 
-        self.controller_image_placeholder = self.canvas.create_image(1150, 20, image=self.controller_image_none, anchor='nw')
+        self.controller_image_placeholder = self.canvas.create_image(1150, 10, image=self.controller_image_none, anchor='nw')
 
         # Add texts
-        self.start_text = self.canvas.create_text(382, 78, text="", font=("Arial", 16), fill="white", anchor="center")
-        self.select_text = self.canvas.create_text(382, 290, text="", font=("Arial", 16), fill="white", anchor="center")
+        self.start_text = self.canvas.create_text(320, 78, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
+        self.select_text = self.canvas.create_text(382, 290, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
 
-        self.movement_text = self.canvas.create_text(500, 290, text="", font=("Arial", 16), fill="white", anchor="center")
+        self.movement_text = self.canvas.create_text(500, 290, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
         
-        self.y_button_text = self.canvas.create_text(662, 78, text="", font=("Arial", 16), fill="white", anchor="center")
-        self.x_button_text = self.canvas.create_text(787, 78, text="", font=("Arial", 16), fill="white", anchor="center")
-        self.l1_button_text = self.canvas.create_text(912, 78, text="", font=("Arial", 16), fill="white", anchor="center")
-        self.r1_button_text = self.canvas.create_text(1037, 78, text="", font=("Arial", 16), fill="white", anchor="center")
+        self.y_button_text = self.canvas.create_text(662, 78, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
+        self.x_button_text = self.canvas.create_text(787, 78, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
+        self.l1_button_text = self.canvas.create_text(912, 78, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
+        self.r1_button_text = self.canvas.create_text(1037, 78, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
 
-        self.a_button_text = self.canvas.create_text(662, 290, text="", font=("Arial", 16), fill="white", anchor="center")
-        self.b_button_text = self.canvas.create_text(787, 290, text="", font=("Arial", 16), fill="white", anchor="center")
-        self.l2_button_text = self.canvas.create_text(912, 290, text="", font=("Arial", 16), fill="white", anchor="center")
-        self.r2_button_text = self.canvas.create_text(1037, 290, text="", font=("Arial", 16), fill="white", anchor="center")
+        self.b_button_text = self.canvas.create_text(662, 290, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
+        self.a_button_text = self.canvas.create_text(787, 290, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
+        self.l2_button_text = self.canvas.create_text(912, 290, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
+        self.r2_button_text = self.canvas.create_text(1037, 290, text="", font=("Arial", 16), fill="white", anchor="center", width=125)
 
         self.attributes('-fullscreen', True) #1480x320
 
@@ -110,6 +111,11 @@ class App(tk.Tk):
 
     # The callback for when a PUBLISH message is received from the server.
     def on_message(self, client, userdata, msg):
+        if (msg.topic == "/BruudtArcade/endgame"):
+            self.resetImage()
+            self.resetButtons()
+            self.resetController()
+
         if (msg.topic == "/BruudtArcade/rungame"):
             self.resetController()
             game = self.messageToGameDescription(msg)
@@ -201,8 +207,13 @@ class App(tk.Tk):
         return gd
 
 
+    def resetImage(self):
+        self.gameImage = PhotoImage(file="logo.png").subsample(3,3)
+        self.canvas.itemconfig(self.gameImagePlaceholder,image=self.gameImage)
+
     def resetController(self):
         self.canvas.itemconfig(self.controller_image_placeholder, image=self.controller_image_none)
+        self.canvas.itemconfigure(self.movement_text, text = "")
     
     def resetButtons(self):
         self.canvas.itemconfig(self.start_button_placeholder, image=self.startp1_imageoff)
