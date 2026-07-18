@@ -58,7 +58,7 @@ class App(tk.Tk):
 
         # Draw game image and title
         self.gameImagePlaceholder =  self.canvas.create_image(20,35, image=self.gameImage, anchor='nw')
-        self.gameNamePlaceholder = self.canvas.create_text(865, 26, text="Bruudt's Arcade to go", font=("Adumu", 38), fill="white", anchor="center", width=1400)
+        self.gameNamePlaceholder = self.canvas.create_text(865, 26, text="Bruudt Arcade to go", font=("Adumu", 34), fill="white", anchor="center", width=1400)
 
         # Draw game buttons
         self.start_button_placeholder = self.canvas.create_image(320, 100, image=self.startp1_imageoff, anchor='nw')
@@ -119,7 +119,6 @@ class App(tk.Tk):
         if (msg.topic == "/BruudtArcade/rungame"):
             self.resetController()
             game = self.messageToGameDescription(msg)
-            print(game.game)
             self.canvas.itemconfigure(self.gameNamePlaceholder, text = game.game)
 
             if (game.systemid == "psx"):
@@ -135,7 +134,6 @@ class App(tk.Tk):
         elif (msg.topic == "/BruudtArcade/currentimage"):
             self.gameImage = tk.PhotoImage(data=msg.payload).subsample(3,3)
             self.canvas.itemconfig(self.gameImagePlaceholder,image=self.gameImage)
-            print("image replaced")
 
         # Game config
         elif (msg.topic == "/BruudtArcade/currentconfig"):
@@ -210,6 +208,7 @@ class App(tk.Tk):
     def resetImage(self):
         self.gameImage = PhotoImage(file="logo.png").subsample(3,3)
         self.canvas.itemconfig(self.gameImagePlaceholder,image=self.gameImage)
+        self.canvas.itemconfigure(self.gameNamePlaceholder, text = "Bruudt Arcade to go")
 
     def resetController(self):
         self.canvas.itemconfig(self.controller_image_placeholder, image=self.controller_image_none)
