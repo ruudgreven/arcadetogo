@@ -1,0 +1,4 @@
+[Mqtt]
+Server = <ServerIp>
+Port = <ServerPort>
+Topic = <Topic, e.g. /BruudtArcade/#>

@@ -1,0 +1,8 @@
+[Movement]
+Type = joystick
+Text = Walk and Steer
+       (Relative)
+
+[Keys]
+A = Jump
+B = Blaat

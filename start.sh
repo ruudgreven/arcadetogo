@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd ~/arcadetogo-main
 source myvenv/bin/activate
 
